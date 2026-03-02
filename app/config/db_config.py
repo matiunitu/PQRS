@@ -6,5 +6,5 @@ def get_db_connection():
         port="5432",
         user="neondb_owner",
         password="npg_E0rTLVPGDin3",
-        dbname="neondb"
+        dbname="pqrsdb"
     )
