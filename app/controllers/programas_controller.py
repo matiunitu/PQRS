@@ -13,7 +13,7 @@ class ProgramasController:
             cursor.execute("INSERT INTO usuarios (nombre,apellido,cedula,edad,usuario,contrasena) VALUES (%s, %s, %s, %s, %s ,%s)", (programas.nombre, programas.apellido, programas.cedula, programas.edad, programas.usuario, programas.contrasena))
             conn.commit()
             conn.close()
-            return {"resultado": "Usuario creado"}
+            return {"resultado": "Programa creado"}
         except psycopg2.Error as err:
             print(err)
             # Si falla el INSERT, los datos no quedan guardados parcialmente en la base de datos
