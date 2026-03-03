@@ -33,13 +33,9 @@ class ProgramasController:
             content = {} 
             
             content={
-                    'id':int(result[0]),
-                    'nombre':result[1],
-                    'apellido':result[2],
-                    'cedula':result[3],
-                    'edad':int(result[4]),
-                    'usuario':result[5],
-                    'contrasena':result[6]
+                'id_programa':data[0],
+                'nombre_programa':data[1],
+                'descripcion':data[2],
             }
             payload.append(content)
             
@@ -70,12 +66,9 @@ class ProgramasController:
             content = {} 
             for data in result:
                 content={
-                    'id':data[0],
-                    'nombre':data[1],
-                    'cedula':data[2],
-                    'edad':data[3],
-                    'usuario':data[4],
-                    'contrasena':data[5]
+                    'id_programa':data[0],
+                    'nombre_programa':data[1],
+                    'descripcion':data[2],
                 }
                 payload.append(content)
                 content = {}

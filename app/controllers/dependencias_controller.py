@@ -27,19 +27,15 @@ class DependenciasController:
         try:
             conn = get_db_connection()
             cursor = conn.cursor()
-            cursor.execute("SELECT * FROM usuarios WHERE id = %s", (user_id,))
+            cursor.execute("SELECT * FROM dependencias WHERE id = %s", (user_id,))
             result = cursor.fetchone()
             payload = []
             content = {} 
             
             content={
-                    'id':int(result[0]),
-                    'nombre':result[1],
-                    'apellido':result[2],
-                    'cedula':result[3],
-                    'edad':int(result[4]),
-                    'usuario':result[5],
-                    'contrasena':result[6]
+                    'id_dependencia':data[0],
+                    'nombre_dependencia':data[1],
+                    'descripcion':data[2],
             }
             payload.append(content)
             
@@ -64,18 +60,15 @@ class DependenciasController:
         try:
             conn = get_db_connection()
             cursor = conn.cursor()
-            cursor.execute("SELECT * FROM usuarios")
+            cursor.execute("SELECT * FROM dependencias")
             result = cursor.fetchall()
             payload = []
             content = {} 
             for data in result:
                 content={
-                    'id':data[0],
-                    'nombre':data[1],
-                    'cedula':data[2],
-                    'edad':data[3],
-                    'usuario':data[4],
-                    'contrasena':data[5]
+                    'id_dependencia':data[0],
+                    'nombre_dependencia':data[1],
+                    'descripcion':data[2],
                 }
                 payload.append(content)
                 content = {}
